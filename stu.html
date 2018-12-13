@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script>
+       function Student(name){
+		this.name=name;
+		this.sub=new Array(Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*100));
+		 }
+		
+		var student1=new Student("Manoj");
+        var student2=new Student("Ankith");
+        var student3=new Student("Niraj");
+        var student4=new Student("Ram");
+        var student5=new Student("John");
+        var student = new Array(student1,student2,student3,student4,student5);
+        var sum=0;
+        var avg=0;
+        var bavg=new Array(3);
+        var btot=new Array(3);
+        var s=new Array(5);
+       
+        for(var i=0;i<student.length;i++){
+			for(var j=0;j<3;j++){
+               sum+=student[i].sub[j];
+                s[i]=student[i].name;
+             }   
+               avg=sum/3; 
+               bavg.push(avg);
+               btot.push(sum);
+          
+       } 
+         bavg.sort((a,b)=>a-b);
+         btot.sort((a,b)=>a-b);
+         
+             document.write("Based on avg marks");
+       document.write("<br>"+"<br>");
+       for(var i=0;i<student.length;i++)
+         document.write(student[i].name+"&nbsp"+"&nbsp"+bavg[i]+"<br>"+"<br>");
+
+       document.write("Based on total marks");
+       document.write("<br>"+"<br>");
+       for(var i=0;i<student.length;i++)
+         document.write(student[i].name+"&nbsp"+"&nbsp"+btot[i]+"<br>"+"<br>");
+
+       document.write("Based on names");
+       document.write("<br>"+"<br>");
+       
+       s.sort();
+       
+       for(var i=0;i<student.length;i++)
+         document.write(s[i]+"&nbsp"+"&nbsp"+"<br>"+"<br>");
+        
+	</script>
+  </head>
+  </html>	    		   
